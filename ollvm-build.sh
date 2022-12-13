@@ -147,6 +147,7 @@ else # script called from host
   echo "## Source dir  : $OLLVM_DIR"
   echo "## Docker image: $DOCKER_IMAGE_NAME"
   echo "##"
+  DOCKER_CMD+=" -DLLVM_INCLUDE_TESTS=OFF"
   docker run "${DOCKER_OPTS[@]}" -it $DOCKER_IMAGE_NAME $DOCKER_CMD
   echo "Build finished successfully. Output directory: $BUILD_DIR"
 fi
